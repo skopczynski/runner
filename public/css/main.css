@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+html{
+    font-family: 'Lato';
+    font-weight: '300';
+}
+.navbar{
+    margin: -8px -8px 0px -8px;
+    padding: 12px 30px;
+    background-color: #2980b9;
+}
+.navbar a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+.navbar a:hover {
+    color:white;
+    text-decoration: underline;
+}
+
+.home-btn{
+    padding-top: 15px;
+}
+.home-btn-main{
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 15px 0px #bdc3c7;
+    -moz-box-shadow: 0px 0px 15px 0px #bdc3c7;
+    box-shadow: 0px 0px 15px 0px #bdc3c7;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 25px;
+    text-decoration: none;
+    width: 200px;
+}
+.add-run {
+    background: #e74c3c;
+}
+.add-run:hover {
+    background-color: #c0392b;
+    text-decoration: none;
+}
+.wf-btn {
+    background: #9b59b6;
+}
+.wf-btn:hover {
+    background-color: #8e44ad;
+    text-decoration: none;
+}
+.search-btn {
+    background: #2ecc71;
+}
+.search-btn:hover {
+    background-color: #27ae60;
+    text-decoration: none;
+}
+.home-btn-main:hover {
+    text-decoration: none;
+}
+#button-link{
+    text-decoration: none;
+}
+
+.week-run-container {
+    margin: 0 auto;
+    padding: 15px 0px 0px 0px; 
+}
+.week-run-container .week-run{
+    box-shadow: 0px 0px 15px 0px #bdc3c7;
+    padding: 10px;
+}
+
+.team-container {
+    margin: 0 auto;
+    padding: 15px 0px 0px 0px; 
+}
+.team-container .team-table{
+    box-shadow: 0px 0px 15px 0px #bdc3c7;
+    height: 465px;
+    padding: 10px;
+}
+.team-table h5{
+    text-align: center;
+    font-size: 21px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: -3px;
+}
