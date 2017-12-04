@@ -16,20 +16,21 @@
             <button id="signup">sign up</button>
         </div>
     </div>
-        <% if(login){ %>
+        <div id="result">
             <%- include partials/login.ejs %>
-        <% } else{ %>  
-            <%- include partials/signup.ejs %>
-        <% } %>
+        </div>
     </div>
 </div>
 
 
 <script>
-    var login = true;
-    var setLogin = function(tf){
-        login = tf
-    }
+   var $result = $('#result'); 
+    $('#signup').click(function() {
+       $result.load('/signup');
+    })
+    $('#login').click(function() {
+       $result.load('/login');
+    })
 </script>
 
 <% include partials/footer %>

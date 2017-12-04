@@ -14,6 +14,9 @@ module.exports = {
 		res.render('history', {title: 'runner'});
 	},
 	login(req, res) {
-		res.render('inout', {title: 'runner'});
-	}
+		res.render('login', {title: 'runner'});
+    },
+    signup(req, res){
+        res.render('signup', {title: 'runner'})
+    }
 };
