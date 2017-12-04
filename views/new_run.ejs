@@ -1,22 +1,18 @@
 <% include partials/head %>
 <center><h1>New Run</h1>
-<html>
 
-   <head>
-      <title>Text Input Control</title>
-   </head>
+
+
+<form action="/new_run" method="post" >
+Date:  <input type = "text" name = "date" />
+    <br>
+    Mileage: <input type = "text" name = "mileage" />
+    <br>
+    Feeling: <input type = "text" name = "feeling" />
+    <br>
+    <input type = "submit" value = "Submit" />
+</form>
+
 	
-   <body>
-      <form action = "/new_run"method= "post" >
-        Date:  <input type = "text" name = "date" />
-         <br>
-         Mileage: <input type = "text" name = "mileage" />
-         <br>
-         Feeling: <input type = "text" name = "feeling" />
-         <br>
-         <input type = "submit" name = "submit" value = "Submit" />
-      </form>
-   </body>
-	
-</html></center>
+</center>
 <% include partials/footer %>

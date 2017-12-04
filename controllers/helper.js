@@ -22,28 +22,9 @@ module.exports = {
 	loginPage(req, res) {
 		res.render('login', {title: 'runner'});
     },
-    loginUser(req, res){
-        console.log(req.body)
-        res.redirect('/')
-    },
     signupPage(req, res){
         res.render('signup', {title: 'runner'})
     },
-    signupUser(req, res){
-        console.log(req.body)
-        res.redirect('/')
-    },
-	save_run(req,res){
-		connection.connect(function(err){
-			if(!err) {
-				  console.log("Hi");
-			} else {
-				console.log("Error connecting database ... nn");    
-			}
-		});
-		console.log(req.body);
-		res.redirect('/');
-	},
 	new_run(req, res){
 		res.render('new_run', {title:'runner'});			
 	}

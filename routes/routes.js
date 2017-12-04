@@ -1,7 +1,7 @@
 const helper = require('../controllers/helper');
+const postHelper = require('../controllers/postHelper');
 
 module.exports = function (app) {
-
 	app.route('/')
 		.get(helper.home)
 
@@ -16,13 +16,13 @@ module.exports = function (app) {
 
 	app.route('/new_run')	
 		.get(helper.new_run)
-		.post(helper.save_run)
+		.post(postHelper.save_run)
 		
 	app.route('/login')
         .get(helper.loginPage)
-        .post(helper.loginUser)
+        .post(postHelper.loginUser)
         
     app.route('/signup')
         .get(helper.signupPage)
-        .post(helper.signupUser)
+        .post(postHelper.signupUser)
 };
