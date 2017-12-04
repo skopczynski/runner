@@ -1,21 +1,21 @@
-<form>
+<form method="POST" action="/signup">
     <div class="row">
         <div class="twelve columns">
         <label for="exampleEmailInput">name</label>
-        <input class="u-full-width" type="text" placeholder="Jane Doe" id="exampleEmailInput">
+        <input name='user' class="u-full-width" type="text" placeholder="Jane Doe" id="exampleEmailInput" required>
         </div>
     </div>
 
     <div class="row">
         <div class="twelve columns">
         <label for="exampleEmailInput">password</label>
-        <input class="u-full-width" type="password" placeholder="password" id="exampleEmailInput">
+        <input name='password' class="u-full-width" type="password" placeholder="password" id="exampleEmailInput" required>
         </div>
     </div>
     <div class="row">
         <div class="twelve columns">
         <label for="exampleEmailInput">shoes</label>
-        <input class="u-full-width" type="text" placeholder="shoes" id="exampleEmailInput">
+        <input name='shoe' class="u-full-width" type="text" placeholder="shoes" id="exampleEmailInput" required>
         </div>
     </div>
     <input class="button-primary" type="submit" value="Submit">

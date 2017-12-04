@@ -10,10 +10,10 @@
     <div class="four columns offset-by-four">
     <div class="row">
         <div class="six columns">
-            <button id="login">login</button>
+            <a href='/login'><button id="login" class='button-primary'>login</button></a>
         </div>
         <div class="six columns">
-            <button id="signup">sign up</button>
+            <a href='/signup'><button id="signup">sign up</button></a>
         </div>
     </div>
         <div id="result">
@@ -22,15 +22,5 @@
     </div>
 </div>
 
-
-<script>
-   var $result = $('#result'); 
-    $('#signup').click(function() {
-       $result.load('/signup');
-    })
-    $('#login').click(function() {
-       $result.load('/login');
-    })
-</script>
 
 <% include partials/footer %>

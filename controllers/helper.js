@@ -13,10 +13,18 @@ module.exports = {
 	history(req, res) {
 		res.render('history', {title: 'runner'});
 	},
-	login(req, res) {
+	loginPage(req, res) {
 		res.render('login', {title: 'runner'});
     },
-    signup(req, res){
+    loginUser(req, res){
+        console.log(req.body)
+        res.redirect('/')
+    },
+    signupPage(req, res){
         res.render('signup', {title: 'runner'})
+    },
+    signupUser(req, res){
+        console.log(req.body)
+        res.redirect('/')
     }
 };

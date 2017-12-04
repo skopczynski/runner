@@ -14,8 +14,10 @@ module.exports = function (app) {
 		.get(helper.settings)
 
 	app.route('/login')
-        .get(helper.login)
+        .get(helper.loginPage)
+        .post(helper.loginUser)
         
     app.route('/signup')
-		.get(helper.signup)
+        .get(helper.signupPage)
+        .post(helper.signupUser)
 };
