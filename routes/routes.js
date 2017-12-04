@@ -12,7 +12,8 @@ module.exports = function (app) {
 		.get(helper.history)
 
 	app.route('/settings')
-		.get(helper.settings)
+        .get(helper.settings)
+        .post(postHelper.settings)
 
 	app.route('/new_run')	
 		.get(helper.new_run)

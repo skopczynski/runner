@@ -25,5 +25,9 @@ module.exports = {
 		});
 		console.log(req.body);
 		res.redirect('/');
-	}
+    },
+    settings(req, res){
+        console.log(req.body)
+        res.redirect('/')
+    }
 };

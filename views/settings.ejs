@@ -6,23 +6,28 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row" >
     <div class="four columns offset-by-four">
-        <form>
-        <div class="row">
-            <div class="twelve columns">
-            <label for="exampleEmailInput">Full Name</label>
-            <input class="u-full-width" type="text" placeholder="Jane Doe" id="exampleEmailInput">
+        <form action='/settings' method='POST'>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Full Name</label>
+                <input name='name' class="u-full-width" type="text" placeholder="Jane Doe" id="exampleEmailInput">
+                </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="twelve columns">
-            <label for="exampleEmailInput">New Password</label>
-            <input class="u-full-width" type="text" placeholder="Password" id="exampleEmailInput">
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Old Password</label>
+                <input name='curr_password' class="u-full-width" type="text" placeholder="Password" id="exampleEmailInput">
+                </div>
             </div>
-        </div>
-        <input class="button-primary" type="submit" value="Submit">
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">New Password</label>
+                <input name='new_password' class="u-full-width" type="text" placeholder="Password" id="exampleEmailInput">
+                </div>
+            </div>
+            <input class="button-primary" type="submit" value="Submit">
         </form>
     </div>
 </div>
