@@ -1,0 +1,35 @@
+<% include partials/head %>
+
+<div class="row home-btn">
+    <div class="four columns offset-by-four" style="text-align: center">
+        <h1>Login/Sign Up</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="four columns offset-by-four">
+    <div class="row">
+        <div class="six columns">
+            <button id="login">login</button>
+        </div>
+        <div class="six columns">
+            <button id="signup">sign up</button>
+        </div>
+    </div>
+        <% if(login){ %>
+            <%- include partials/login.ejs %>
+        <% } else{ %>  
+            <%- include partials/signup.ejs %>
+        <% } %>
+    </div>
+</div>
+
+
+<script>
+    var login = true;
+    var setLogin = function(tf){
+        login = tf
+    }
+</script>
+
+<% include partials/footer %>

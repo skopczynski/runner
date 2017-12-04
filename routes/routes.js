@@ -12,4 +12,7 @@ module.exports = function (app) {
 
 	app.route('/settings')
 		.get(helper.settings)
+
+	app.route('/login')
+		.get(helper.login)
 };
