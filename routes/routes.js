@@ -17,4 +17,7 @@ module.exports = function (app) {
 	app.route('/new_run')	
 		.get(helper.new_run)
 		.post(helper.save_run)
+		
+	app.route('/login')
+		.get(helper.login)
 };

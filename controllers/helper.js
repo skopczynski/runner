@@ -34,6 +34,8 @@ module.exports = {
 	},
 	new_run(req, res){
 		res.render('new_run', {title:'runner'});			
-		
+	},	
+	login(req, res) {
+		res.render('inout', {title: 'runner'});
 	}
 };
