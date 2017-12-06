@@ -27,5 +27,11 @@ module.exports = {
     },
 	new_run(req, res){
 		res.render('new_run', {title:'runner'});			
+	},
+	wellness(req, res){
+		res.render('wellness', {title:'runner'});
+	},
+	advanced(req, res){
+		res.render('advanced', {title:'runner'});
 	}
 };

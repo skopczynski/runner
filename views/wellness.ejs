@@ -2,35 +2,35 @@
 
 <div class="row home-btn">
     <div class="four columns offset-by-four" style="text-align: center">
-        <h1>Add Run</h1>
+        <h1>Wellness Form</h1>
     </div>
 </div>
 
 <div class="row" >
     <div class="four columns offset-by-four">
-        <form action='/new_run' method='POST'>
+        <form action='/wellness' method='POST'>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Sleep</label>
+                <input name='sleep' class="u-full-width" type="text" placeholder="8" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Stress</label>
+                <input name='stress' class="u-full-width" type="text" placeholder="6" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Meals</label>
+                <input name='meal' class="u-full-width" type="text" placeholder="3" id="exampleEmailInput">
+                </div>
+            </div>
             <div class="row">
                 <div class="twelve columns">
                 <label for="exampleEmailInput">Date</label>
-                <input name='date' class="u-full-width" type="text" placeholder="12/10/2015" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Mileage</label>
-                <input name='miles' class="u-full-width" type="text" placeholder="6.3" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Feeling</label>
-                <input name='feeling' class="u-full-width" type="text" placeholder="5" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Description</label>
-                <textarea name="description" cols="48" placeholder="Today was not bad but my achilles was a little sore."></textarea>
+                <input name='date' class="u-full-width" type="text" placeholder="11/7/2017" id="exampleEmailInput">
                 </div>
             </div>
             <input class="button-primary" type="submit" value="Submit">

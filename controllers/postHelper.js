@@ -16,17 +16,14 @@ module.exports = {
         res.redirect('/')
     },
 	save_run(req,res){
-		connection.connect(function(err){
-			if(!err) {
-				  console.log("Hi");
-			} else {
-				console.log("Error connecting database ... nn");    
-			}
-		});
 		console.log(req.body);
 		res.redirect('/');
     },
     settings(req, res){
+        console.log(req.body)
+        res.redirect('/')
+    },
+    wellness(req, res){
         console.log(req.body)
         res.redirect('/')
     }
