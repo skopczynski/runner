@@ -1,0 +1,41 @@
+<% include partials/head %>
+
+<div class="row home-btn">
+    <div class="four columns offset-by-four" style="text-align: center">
+        <h1>Add Run</h1>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="four columns offset-by-four">
+        <form action='/add_shoe' method='POST'>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Date</label>
+                <input name='date' class="u-full-width" type="text" placeholder="12/10/2015" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Mileage</label>
+                <input name='miles' class="u-full-width" type="text" placeholder="6.3" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Feeling</label>
+                <input name='feeling' class="u-full-width" type="text" placeholder="5" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Description</label>
+                <textarea name="description" cols="48" placeholder="Today was not bad but my achilles was a little sore."></textarea>
+                </div>
+            </div>
+            <input class="button-primary" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<% include partials/footer %>

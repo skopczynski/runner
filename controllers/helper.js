@@ -33,5 +33,8 @@ module.exports = {
 	},
 	advanced(req, res){
 		res.render('advanced', {title:'runner'});
+	},
+	add_shoe(req, res){
+		res.render('add_shoe', {title:'runner'});
 	}
 };

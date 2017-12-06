@@ -30,6 +30,10 @@ module.exports = function (app) {
 	app.route('/wellness')
 		.get(helper.wellness)
 		.post(postHelper.wellness)
+
 	app.route('/advanced')
 		.get(helper.advanced)
+		
+	app.route('add_shoe')
+		.get(helper.add_shoe)
 };
