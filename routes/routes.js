@@ -23,9 +23,12 @@ module.exports = function (app) {
         	.get(helper.loginPage)
         	.post(postHelper.loginUser)
         
-   	 app.route('/signup')
-        	.get(helper.signupPage)
-		.post(postHelper.signupUser)
+    app.route('/signup')
+        .get(helper.signupPage)
+        .post(postHelper.signupUser)
+
+    app.route('/team')
+        .get(helper.teamPage)
 	
 	app.route('/wellness')
 		.get(helper.wellness)
