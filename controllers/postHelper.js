@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 const mysql = require('mysql');
-
+const moment = require('moment')
 
 module.exports = {
     loginUser(req, res){
@@ -12,6 +12,8 @@ module.exports = {
         res.redirect('/')
     },
 	save_run(req,res){
+        let time = moment(req.body.date[0]+ ' ' +req.body.date[1], 'MM-DD-YYYY HH:mm a')
+        let myDate =  moment(time).format("YYYY-MM-DD HH:mm:ss");
         const con = mysql.createConnection({
             host     : 'localhost',
             user     : 'root',
@@ -22,7 +24,7 @@ module.exports = {
             if (err) throw err;
             console.log("Connected!");
             var sql = "INSERT INTO run (user_id, mileage, run_date, feeling, description) VALUES (%user_id%, %mileage%, %run_date%, %feeling%, %description%)";
-            var rep = {"%user_id%": "1", "%mileage%": req.body.miles, "%run_date%": "\"" + req.body.date + "\"", "%feeling%": req.body.feeling, "%description%": "\"" + req.body.description + "\""};
+            var rep = {"%user_id%": "1", "%mileage%": req.body.miles, "%run_date%": "\"" + myDate + "\"", "%feeling%": req.body.feeling, "%description%": "\"" + req.body.description + "\""};
             sql = sql.replace(/%\w+%/g, function(all) {
                 return rep[all] || all;
              });
