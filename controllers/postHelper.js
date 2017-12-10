@@ -26,7 +26,6 @@ module.exports = {
             sql = sql.replace(/%\w+%/g, function(all) {
                 return rep[all] || all;
              });
-             console.log(sql);
              con.query(sql, function (err, result) {
                 if (err) throw err;
                 con.end();
@@ -40,7 +39,26 @@ module.exports = {
         res.redirect('/')
     },
     wellness(req, res){
-        console.log(req.body)
+        const con = mysql.createConnection({
+            host     : 'localhost',
+            user     : 'root',
+            password : 'password',
+            database : 'runner'
+        });
+        con.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            var sql = "INSERT INTO health (user_id, stress, meals, sleep, health_date) VALUES (%user_id%, %stress%, %meals%, %sleep%, %health_date%)";
+            var rep = {"%user_id%": "1", "%stress%": req.body.stress, "%meals%": req.body.meal , "%sleep%": req.body.sleep, "%health_date%": "\"" + req.body.date + "\""};
+            sql = sql.replace(/%\w+%/g, function(all) {
+                return rep[all] || all;
+             });
+             con.query(sql, function (err, result) {
+                if (err) throw err;
+                con.end();
+                console.log("1 record inserted");
+            });
+        });
         res.redirect('/')
     },
     add_shoe(req,res){
