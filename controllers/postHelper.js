@@ -26,5 +26,21 @@ module.exports = {
     wellness(req, res){
         console.log(req.body)
         res.redirect('/')
+    },
+    add_shoe(req,res){
+        console.log(req.body)
+        res.redirect('/')
+    },
+    update_shoe(req,res){
+        console.log(req.body)
+        res.redirect('/')
+    },
+    advanced(req,res){
+        console.log(req.body)
+        res.redirect('/')
+    },
+    team_advanced(req,res){
+        console.log(req.body)
+        res.redirect('/')
     }
 };

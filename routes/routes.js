@@ -33,7 +33,15 @@ module.exports = function (app) {
 
 	app.route('/advanced')
 		.get(helper.advanced)
-		
-	app.route('add_shoe')
+		.post(postHelper.advanced)
+
+	app.route('/add_shoe')
 		.get(helper.add_shoe)
+		.post(postHelper.add_shoe)
+	app.route('/update_shoe')
+		.get(helper.update_shoe)
+		.post(postHelper.update_shoe)
+	app.route('/team_advanced')
+		.get(helper.team_advanced)
+		.post(postHelper.team_advanced)
 };

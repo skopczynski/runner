@@ -1,5 +1,60 @@
 <% include partials/head %>
-<center>
-    <h1>Advanced Search</h1>
-</center>
+
+<div class="row home-btn">
+    <div class="eight columns offset-by-two" style="text-align: center">
+        <h1>Advanced Individual Search</h1>
+    </div>
+</div>
+<div class="row" >
+    <div class="four columns offset-by-four">
+        <form action='/advanced' method='POST'>
+            
+    
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Full Name</label>
+                <input name='name' class="u-full-width" type="text" placeholder="Jane Doe" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Start Date</label>
+                <input name='start' class="u-full-width" type="text" placeholder="12/22/2016" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">End Date</label>
+                <input name='end' class="u-full-width" type="text" placeholder="1/15/2017" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Mileage</label>
+                <input name='miles' class="u-full-width" type="text" placeholder="8.8" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Stress</label>
+                <input name='stress' class="u-full-width" type="text" placeholder="8" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Sleep</label>
+                <input name='sleep' class="u-full-width" type="text" placeholder="9" id="exampleEmailInput">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                <label for="exampleEmailInput">Meals</label>
+                <input name='meal' class="u-full-width" type="text" placeholder="3" id="exampleEmailInput">
+                </div>
+            </div>
+            <input class="button-primary" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
 <% include partials/footer %>

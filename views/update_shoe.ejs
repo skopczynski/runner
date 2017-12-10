@@ -1,0 +1,21 @@
+<% include partials/head %>
+<div class="row home-btn">
+        <div class="four columns offset-by-four" style="text-align: center">
+            <h1>Update Shoe</h1>
+        </div>
+    </div>
+</div>
+<div class="row" >
+        <div class="four columns offset-by-four">
+            <form action='/update_shoe' method='POST'>
+                <div class="row">
+                    <div class="twelve columns">
+                    <label for="exampleEmailInput">End Date</label>
+                    <input name='edate' class="u-full-width" type="text" placeholder="1/17/2018" id="exampleEmailInput">
+                    </div>
+                </div> 
+                <input class="button-primary" type="submit" value="Submit">
+            </form>
+        </div>
+ </div> 
+ <% include partials/footer %>      

@@ -1,0 +1,68 @@
+<% include partials/head %>
+<div class="row home-btn">
+        <div class="ten columns offset-by-one" style="text-align: center">
+            <h1>Advanced Team Search</h1>
+        </div>
+    </div>
+    
+    <div class="row" >
+        <div class="four columns offset-by-four">
+            <form action='/team_advanced' method='POST'>
+                <div class="row">
+                    <div class="twelve columns">
+                    <label for="exampleEmailInput">Mileage</label>
+                    <select name= "miles" STYLE="width: 335px">
+                            <option value="miles1">Most miles ran.</option>
+                            <option value="miles2">Least miles ran.</option>
+                            <option value="miles3">Best average miles.</option>
+                            <option value="miles4">Worst average miles.</option>
+                            <option value="miles5">Worst average overall, most miles by date range.</option>
+                            <option value="miles6">Best average overall, least miles by date range.</option>
+                            <option value="miles7">Best average overall, most miles by date range.</option>
+                            <option value="miles8">Worst average overall, least miles by date range.</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                    <label for="exampleEmailInput">Health Score</label>
+                    <select name="health" STYLE="width: 335px">
+                            <option value="health1">Best health score.</option>
+                            <option value="health2">Worst health score.</option>
+                            <option value="health3">Best average health score.</option>
+                            <option value="health4">Worst average health score.</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                    <label for="exampleEmailInput">Shoes</label>
+                    <select name="combo" STYLE="width: 335px">
+                            <option value="shoe1">Most common trainer.</option>
+                            <option value="shoe2">Least common trainer.</option>
+                            <option value="shoe3">Longest lasting trainer.</option>
+                            <option value="shoe4">Shortest lasting trainer.</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                    <label for="exampleEmailInput">Combination</label>
+                    <select STYLE="width: 335px">
+                            <option value="combo1">Combine mileage and health score choices.</option>
+                            <option value="combo2">Combine mileage and shoe choices.</option>
+                            <option value="combo3">Combine shoe and health score choices.</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                    <label for="exampleEmailInput">Date Range</label>
+                    <input name='date_range' class="u-full-width" type="text" placeholder="11/7/2016, 11/18/2016" id="exampleEmailInput">
+                    </div>
+                </div>
+                <input class="button-primary" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+<% include partials/footer %>

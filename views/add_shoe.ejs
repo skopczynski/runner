@@ -2,7 +2,7 @@
 
 <div class="row home-btn">
     <div class="four columns offset-by-four" style="text-align: center">
-        <h1>Add Run</h1>
+        <h1>Add Shoe</h1>
     </div>
 </div>
 
@@ -11,29 +11,21 @@
         <form action='/add_shoe' method='POST'>
             <div class="row">
                 <div class="twelve columns">
-                <label for="exampleEmailInput">Date</label>
-                <input name='date' class="u-full-width" type="text" placeholder="12/10/2015" id="exampleEmailInput">
+                <label for="exampleEmailInput">Trainer Type</label>
+                <input name='stype' class="u-full-width" type="text" placeholder="Structure 19" id="exampleEmailInput">
                 </div>
             </div>
             <div class="row">
                 <div class="twelve columns">
-                <label for="exampleEmailInput">Mileage</label>
-                <input name='miles' class="u-full-width" type="text" placeholder="6.3" id="exampleEmailInput">
+                <label for="exampleEmailInput">Start Date</label>
+                <input name='sdate' class="u-full-width" type="text" placeholder="11/22/2017" id="exampleEmailInput">
                 </div>
             </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Feeling</label>
-                <input name='feeling' class="u-full-width" type="text" placeholder="5" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Description</label>
-                <textarea name="description" cols="48" placeholder="Today was not bad but my achilles was a little sore."></textarea>
-                </div>
-            </div>
+            
             <input class="button-primary" type="submit" value="Submit">
+            <a href="/update_shoe" id="button-link">
+                <input class="button-primary" type="button" value="Update"></div>
+            </a>
         </form>
     </div>
 </div>
