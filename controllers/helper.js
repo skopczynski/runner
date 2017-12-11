@@ -37,9 +37,6 @@ module.exports = {
 	add_shoe(req, res){
 		res.render('add_shoe', {title:'runner'});
 	},
-	update_shoe(req,res){
-		res.render('update_shoe', {title:'runner'});
-	},
 	team_advanced(req,res){
 		res.render('team_advanced', {title:'runner'});
 	}
