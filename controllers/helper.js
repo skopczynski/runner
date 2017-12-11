@@ -8,15 +8,40 @@ const connection = mysql.createConnection({
 });
 module.exports = {
 	home(req, res) {
+        if(req.cookies.id === undefined)
+            return res.render('login', {title: 'runner'});
+
+        let userid;
+        const con = mysql.createConnection({
+            host     : 'localhost',
+            user     : 'root',
+            password : 'password',
+            database : 'runner'
+        });
+
+        sql = "select user_id from users where fullname=" +"\"" +req.body.name+ "\""+"and user_password="+ "\"" +req.body.password +"\"" + "and class_year=" +req.body.year +";";
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            res.cookie('id', result[0].user_id).redirect('/')
+            con.end();
+        });
+
 		res.render('index', {title: 'runner'});
 	},
 	search(req, res) {
+        if(req.cookies.id === undefined)
+            return res.render('login', {title: 'runner'});
+
 		res.render('search', {title: 'runner'});
 	},
 	settings(req, res) {
+        if(req.cookies.id === undefined)
+            return res.render('login', {title: 'runner'});
 		res.render('settings', {title: 'runner'});
 	},
 	history(req, res) {
+        if(req.cookies.id === undefined)
+            return res.render('login', {title: 'runner'});
 		res.render('history', {title: 'runner'});
 	},
 	loginPage(req, res) {
