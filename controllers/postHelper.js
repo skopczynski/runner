@@ -62,11 +62,27 @@ module.exports = {
         res.redirect('/')
     },
     add_shoe(req,res){
-        console.log(req.body)
-        res.redirect('/')
-    },
-    update_shoe(req,res){
-        console.log(req.body)
+        const con = mysql.createConnection({
+            host     : 'localhost',
+            user     : 'root',
+            password : 'password',
+            database : 'runner'
+        });
+        con.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            var sql = "INSERT INTO shoe (user_id, s_date, e_date, stype) VALUES (%user_id%, %sdate%, %edate%, %stype%)";
+            var rep = {"%user_id%": "1", "%sdate%":"\""  + req.body.sdate + "\"" , "%edate%":"\"" +  req.body.edate + "\""  , "%stype%":"\"" +  req.body.stype + "\"" };
+            sql = sql.replace(/%\w+%/g, function(all) {
+                return rep[all] || all;
+             });
+             console.log(sql);
+             con.query(sql, function (err, result) {
+                if (err) throw err;
+                con.end();
+                console.log("1 record inserted");
+            });
+        });
         res.redirect('/')
     },
     advanced(req,res){
