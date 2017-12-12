@@ -1,0 +1,35 @@
+<% include partials/head %>
+<div class="row home-btn">
+        <div class="four columns offset-by-four" style="text-align: center">
+            <h1>Search Results</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="six columns offset-by-three">
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Distance</th>
+                        <th>Date</th>
+                        <th>Stress</th>
+                        <th>Meals</th>
+                        <th>Sleep</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <% for(var i = 0; i < data.length;i++){%>
+                        <tr>
+                            <td><%=data[i].fullname%></td>
+                            <td><%=data[i].mileage%></td>
+                            <td><%=data[i].run_date%></td>
+                            <td><%=data[i].stress%></td>
+                            <td><%=data[i].meals%></td>
+                            <td><%=data[i].sleep%></td>
+                        </tr>
+                  <% }%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<% include partials/footer %>

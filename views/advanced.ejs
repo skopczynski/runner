@@ -9,47 +9,24 @@
     <div class="four columns offset-by-four">
         <form action='/advanced' method='POST'>
             
-    
             <div class="row">
                 <div class="twelve columns">
-                <label for="exampleEmailInput">Full Name</label>
-                <input name='name' class="u-full-width" type="text" placeholder="Jane Doe" id="exampleEmailInput">
+                <label for="exampleEmailInput">Search Options</label>
+                <select name="search" STYLE="width: 330px">
+                        <option value = "0"></option>
+                        <option value="search1">Search on full name</option>
+                        <option value="search2">Search on date.</option>
+                        <option value="search3">Search on mileage.</option>
+                        <option value="search4">Search on stress.</option>
+                        <option value="search5">Search on meals.</option>
+                        <option value="search6">Search on sleep.</option>
+                </select>
                 </div>
             </div>
             <div class="row">
                 <div class="twelve columns">
-                <label for="exampleEmailInput">Start Date</label>
-                <input name='start' class="u-full-width" type="text" placeholder="12/22/2016" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">End Date</label>
-                <input name='end' class="u-full-width" type="text" placeholder="1/15/2017" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Mileage</label>
-                <input name='miles' class="u-full-width" type="text" placeholder="8.8" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Stress</label>
-                <input name='stress' class="u-full-width" type="text" placeholder="8" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Sleep</label>
-                <input name='sleep' class="u-full-width" type="text" placeholder="9" id="exampleEmailInput">
-                </div>
-            </div>
-            <div class="row">
-                <div class="twelve columns">
-                <label for="exampleEmailInput">Meals</label>
-                <input name='meal' class="u-full-width" type="text" placeholder="3" id="exampleEmailInput">
+                <label for="exampleEmailInput">Search Value</label>
+                <input name='searchvalue' class="u-full-width" type="text" placeholder="" id="exampleEmailInput">
                 </div>
             </div>
             <input class="button-primary" type="submit" value="Submit">
