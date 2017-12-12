@@ -10,7 +10,6 @@ module.exports = function (app) {
 
 	app.route('/history')
 		.get(helper.history)
-
 	app.route('/settings')
         	.get(helper.settings)
         	.post(postHelper.settings)

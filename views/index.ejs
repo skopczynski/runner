@@ -46,26 +46,21 @@
             <div class="team-table">
                 <h5>Recent Team Runs</h5>
                 <table class="u-full-width">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Distance</th>
-                            <th>Route</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Dave Gamache</td>
-                            <td>9</td>
-                            <td>Browns</td>
-                        </tr>
-                        <tr>
-                            <td>Dwayne Johnson</td>
-                            <td>12</td>
-                            <td>Benburr</td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Distance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <% for(var i = 0; i < data.length;i++){%>
+                                <tr>
+                                    <td><%=data[i].name%></td>
+                                    <td><%=data[i].mileage%></td>
+                                </tr>
+                          <% }%>
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>

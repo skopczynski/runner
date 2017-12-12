@@ -4,8 +4,20 @@ const moment = require('moment')
 
 module.exports = {
     loginUser(req, res){
-        console.log(req.body)
-        res.redirect('/')
+        const con = mysql.createConnection({
+            host     : 'localhost',
+            user     : 'root',
+            password : 'password',
+            database : 'runner'
+        });
+        
+        sql = "select user_id from users where fullname=" +"\"" +req.body.user+ "\""+"and user_password="+ "\"" +req.body.password +"\"" + ";";
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            res.cookie('id', result[0].user_id).redirect('/')
+            con.end();
+        });
+        
     },
     signupUser(req, res){
         let userid;
@@ -78,7 +90,7 @@ module.exports = {
             var newDate = dateArray[2] + '-' + dateArray[0] + '-' + dateArray[1];
             console.log("Connected!");
             var sql = "INSERT INTO health (user_id, stress, meals, sleep, health_date) VALUES (%user_id%, %stress%, %meals%, %sleep%, %health_date%)";
-            var rep = {"%user_id%": "1", "%stress%": req.body.stress, "%meals%": req.body.meal , "%sleep%": req.body.sleep, "%health_date%": "\"" + newDate + "\""};
+            var rep = {"%user_id%": req.cookies.id, "%stress%": req.body.stress, "%meals%": req.body.meal , "%sleep%": req.body.sleep, "%health_date%": "\"" + newDate + "\""};
             sql = sql.replace(/%\w+%/g, function(all) {
                 return rep[all] || all;
              });
@@ -101,7 +113,7 @@ module.exports = {
             if (err) throw err;
             console.log("Connected!");
             var sql = "INSERT INTO shoe (user_id, s_date, e_date, stype) VALUES (%user_id%, %sdate%, %edate%, %stype%)";
-            var rep = {"%user_id%": "1", "%sdate%":"\""  + req.body.sdate + "\"" , "%edate%":"\"" +  req.body.edate + "\""  , "%stype%":"\"" +  req.body.stype + "\"" };
+            var rep = {"%user_id%": req.cookies.id, "%sdate%":"\""  + req.body.sdate + "\"" , "%edate%":"\"" +  req.body.edate + "\""  , "%stype%":"\"" +  req.body.stype + "\"" };
             sql = sql.replace(/%\w+%/g, function(all) {
                 return rep[all] || all;
              });

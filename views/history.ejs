@@ -1,37 +1,29 @@
 <% include partials/head %>
-
 <div class="row home-btn">
-    <div class="four columns offset-by-four" style="text-align: center">
-        <h1>History</h1>
+        <div class="four columns offset-by-four" style="text-align: center">
+            <h1>History</h1>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="six columns offset-by-three">
-        <table class="u-full-width">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Distance</th>
-                    <th>Location</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1/1/2017</td>
-                    <td>6</td>
-                    <td>Browns</td>
-                    <td>poop</td>
-                </tr>
-                <tr>
-                    <td>1/1/2017</td>
-                    <td>6</td>
-                    <td>Browns</td>
-                    <td>poop</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="six columns offset-by-three">
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Distance</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <% for(var i = 0; i < data.length;i++){%>
+                        <tr>
+                            <td><%=data[i].run_date%></td>
+                            <td><%=data[i].mileage%></td>
+                            <td><%=data[i].description%></td>
+                        </tr>
+                  <% }%>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-
 <% include partials/footer %>

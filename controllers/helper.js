@@ -10,23 +10,22 @@ module.exports = {
 	home(req, res) {
         if(req.cookies.id === undefined)
             return res.render('login', {title: 'runner'});
-
-        let userid;
-        const con = mysql.createConnection({
-            host     : 'localhost',
-            user     : 'root',
-            password : 'password',
-            database : 'runner'
-        });
-
-        sql = "select user_id from users where fullname=" +"\"" +req.body.name+ "\""+"and user_password="+ "\"" +req.body.password +"\"" + "and class_year=" +req.body.year +";";
-        con.query(sql, function (err, result) {
+        var con = mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'password',
+            database: 'runner'
+            });
+        var sql = "select u.fullname as name, r.mileage as mileage from run r, users u where u.user_id = r.user_id";
+        con.connect(function(err) {
             if (err) throw err;
-            res.cookie('id', result[0].user_id).redirect('/')
-            con.end();
+            con.query(sql, function (err, result, fields) {
+                if (err) throw err;
+                res.render('index', {data: result, title: 'runner'});
+                con.end();
+            });
         });
-
-		res.render('index', {title: 'runner'});
+       
 	},
 	search(req, res) {
         if(req.cookies.id === undefined)
@@ -42,7 +41,21 @@ module.exports = {
 	history(req, res) {
         if(req.cookies.id === undefined)
             return res.render('login', {title: 'runner'});
-		res.render('history', {title: 'runner'});
+        var con = mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'password',
+            database: 'runner'
+            });
+        var sql = "select run_date, mileage, description from run where user_id =" + "\"" + req.cookies.id + "\"";
+        con.connect(function(err) {
+            if (err) throw err;
+            con.query(sql, function (err, result, fields) {
+                if (err) throw err;
+                res.render('history', {data: result, title: 'runner'});
+                con.end();
+            });
+        });
 	},
 	loginPage(req, res) {
 		res.render('login', {title: 'runner'});
